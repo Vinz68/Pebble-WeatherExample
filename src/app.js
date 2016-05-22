@@ -40,14 +40,11 @@ ajax(
     // Always upper-case first letter of description
     var description = data.weather[0].description;
     description = description.charAt(0).toUpperCase() + description.substring(1);
-    
-    // Show to user
-    card.subtitle(location + ", " + temperature);
-    card.body(description);
   },
   function(error) {
     // Failure!
     console.log('Failed fetching weather data: ' + error);
+    card.body('Error in fetch :( ');
   }
 );
 
